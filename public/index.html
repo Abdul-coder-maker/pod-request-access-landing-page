@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Frontend Mentor | Pod request access landing page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: #54E6AF;
+      color: white;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('./assets/mobile/image-host.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: .1;
+    }
+
+    @media (max-width: 767px) {
+      .text-h1 {
+        font-size: 26px;
+        line-height: 38px;
+      }
+
+      .px-6.text-center p {
+        font-size: 15px;
+      }
+
+    }
+
+
+
+    .max-w-input {
+      max-width: 327px !important;
+    }
+
+    @media (min-width: 768px) {
+      body::before {
+        background-image: url('./assets/tablet/image-host.jpg');
+        width: 491px;
+        height: 767px;
+        opacity: 1;
+        right: 0;
+        left: unset;
+      }
+/* starter-code/assets/desktop/image-host.jpg */
+
+      button.max-w-input {
+        max-width: 162px !important;
+      }
+
+
+    }
+
+    @media (min-width: 1280px) {
+      body::before {
+        background-image: url('./assets/desktop/image-host.jpg');
+        width: 888px;
+        height: 640px;
+        margin-top: 130px;
+      }
+
+      .text-h1 {
+        font-size: 52px !important;
+        line-height: 62px !important;
+      }
+
+      .space-y-4.md\:space-y-0.md\:bg-grey-very-dark.md\:rounded-full.md\:py-1.md\:w-max.md\:flex.md\:pr-1 input {
+        width: 427px;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased font-light leading-7 font-chivo bg-dark text-light-gray ">
+  <header class="flex justify-center py-16 md:justify-start md:pt-12 md:pb-0 md:pl-10 xl:pt-103 xl:pl-165">
+    <img src="./assets/desktop/logo.svg" alt="logo">
+  </header>
+  <main>
+    <section
+      class="px-6 text-center md:bg-dark md:mt-37 md:text-left md:pt-23 md:px-10 md:w-675 md:pr-0 xl:mt-106 xl:pl-0 xl:ml-165 xl:pt-21">
+      <h1 class="font-normal uppercase md:text-5xl text-h1 text-green md:font-light">Publish your podcasts <span
+          class="text-white">everywhere.</span></h1>
+      <p class="font-normal md:mt-8 md:w-7/12 md:text-lg text-light-gray xl:mt-6 xl:w-8/12">Upload your audio to Pod
+        with a single
+        click.
+        We’ll then distribute your podcast to
+        Spotify,
+        Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
+      <div class="flex items-center justify-between mt-8 md:hidden">
+        <div>
+          <img class="w-14" src="./assets/desktop/spotify.svg" alt="spotify">
+        </div>
+        <div>
+          <img class="w-12" src="./assets/desktop/apple-podcast.svg" alt="apple podcast">
+        </div>
+        <div>
+          <img class="w-17" src="./assets/desktop/google-podcasts.svg" alt="google podcast">
+        </div>
+        <div>
+          <img class="w-18" src="./assets/desktop/pocket-casts.svg" alt="pocket casts">
+        </div>
+      </div>
+      <form class="mt-12 space-y-4 md:mt-10" action="#">
+        <div
+          class="relative space-y-4 md:space-y-0 md:bg-grey-very-dark md:rounded-full md:py-1 md:w-max md:flex md:pr-1">
+
+          <label class="sr-only" for="email">Enter your email address</label>
+          <input
+            class="w-full px-8 py-2 font-bold leading-7 rounded-full placeholder-light-dark max-w-input bg-grey-very-dark focus:ring-2 focus:ring-green md:pr-0"
+            type="email" name="email" id="email" placeholder="Email address"
+            pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
+          <button id="btn"
+            class="w-full py-2 font-bold leading-7 text-center text-black capitalize rounded-full bg-green max-w-input hover:bg-light-green"
+            type="submit">Request access</button>
+          <p id="form__email__result" class="absolute text-sm font-bold text-red-500 left-8 -bottom-6"></p>
+        </div>
+      </form>
+      <div class="items-center justify-between hidden md:flex md:mt-16 md:w-536">
+        <div>
+          <img class="w-24" src="./assets/desktop/spotify.svg" alt="spotify">
+        </div>
+        <div>
+          <img class="w-18" src="./assets/desktop/apple-podcast.svg" alt="apple podcast">
+        </div>
+        <div>
+          <img class="w-30" src="./assets/desktop/google-podcasts.svg" alt="google podcast">
+        </div>
+        <div>
+          <img class="w-32" src="./assets/desktop/pocket-casts.svg" alt="pocket casts">
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="absolute bottom-0 hidden md:block left-8 xl:right-0 xl:left-auto xl:bottom-19">
+    <svg width="232" height="104" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4 96a4 4 0 110 8 4 4 0 010-8zm224 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm192-32a4 4 0 110 8 4 4 0 010-8zM4 64a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32-32a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zm-32 0a4 4 0 110 8 4 4 0 010-8zM4 32a4 4 0 110 8 4 4 0 010-8zM36 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zm32 0a4 4 0 110 8 4 4 0 010-8zM4 0a4 4 0 110 8 4 4 0 010-8z"
+        fill="#54E6AF" fill-rule="evenodd" /></svg>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
